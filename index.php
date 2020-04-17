@@ -142,6 +142,10 @@ $req->closeCursor() ?>
                 <p><?php if (isset($_SESSION['id']) AND isset($_SESSION['name'])) {
                         echo 'Bonjour ' . $_SESSION['name'];
                     } ?></p>
+                <div>
+                    <a type="submit" class="btn btn-primary" href="disconnect.php">
+                        Deconnexion</a>
+                </div>
             </div>
         </div>
     </div>
