@@ -10,7 +10,7 @@ if ($password == $passwordBis) {
     $req = $bdd->prepare('INSERT INTO user (name, first_name, mail_adress, login, password) VALUES(?, ?, ?, ?, ?)');
     $req->execute(array($_POST['lastName'], $_POST['firstName'], $_POST['mailAdress'], $_POST['login'], $pass_hache));
 
-    header('Location: create-account-succes.php');
+    header('Location: ../Vue/create-account-succes.php');
 } else {
-    header('Location: create-account-error.php');
+    header('Location: ../Vue/create-account-error.php');
 }

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,24 +6,24 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Blog">
+    <meta name="author" content="Jean Forteroche">
 
     <title>Le Blog De Jean Forteroche</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
           rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="css/clean-blog.css" rel="stylesheet">
-    <link rel="icon" href="img/favicon.ico"/>
+    <link href="../css/clean-blog.css" rel="stylesheet">
+    <link rel="icon" href="../img/favicon.ico"/>
 
 </head>
 
@@ -40,13 +41,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Accueil</a>
+                    <a class="nav-link" href="home-page.php">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">À propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="post.php">Liste des Chapitres</a>
+                    <a class="nav-link" href="list-chapter.php">Liste des Chapitres</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact</a>
@@ -59,51 +60,8 @@
     </div>
 </nav>
 
-<!-- Page Header -->
-<header class="masthead" style="background-image: url('img/livre.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div id="logo"><img src="img/logo_valou_white.png"/></div>
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-heading">
-                    <h1>Liste des chapitres</h1>
-                    <span class="subheading">Retrouvez les ci-dessous.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<?= $content ?>
 
-<!-- Post Content -->
-<article>
-    <?php require_once('request-sql-list-chapter.php');
-    while ($donnees = $req->fetch()) { ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="post-preview">
-                        <a href="one-chapter.php?id=<?php echo $donnees['id']; ?>">
-                            <h2 class="post-title">
-                                <?php echo $donnees['title']; ?>
-                            </h2>
-                            <h3 class="post-subtitle">
-                                <?php echo $donnees['content_extrait']; ?>... <span id="underline_2">voir la suite</span>
-                            </h3>
-                        </a>
-                        <p class="post-meta">Posté par
-                            <a href="about.php"><?php echo $donnees['author']; ?></a>
-                            le <?php echo $donnees['date_creation_fr']; ?></p>
-                    </div>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    <?php }
-    $req->closeCursor() ?>
-</article>
-
-<hr>
 
 <!-- Footer -->
 <footer>
@@ -137,17 +95,23 @@
                     </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+                <p><?php if (isset($_SESSION['id']) AND isset($_SESSION['name'])) {
+                        echo 'Bonjour ' . $_SESSION['name'];
+                    } ?></p>
+                <div>
+                    <a type="submit" class="btn btn-primary" href="../Modèle/disconnect.php"> Deconnexion</a>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="js/clean-blog.min.js"></script>
+<script src="../js/clean-blog.min.js"></script>
 
 </body>
 

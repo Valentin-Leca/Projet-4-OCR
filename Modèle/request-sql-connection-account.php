@@ -23,7 +23,7 @@ else
         $_SESSION['name'] = $donnees['name'];
         $_SESSION['firt_name'] = $donnees['first_name'];
         $_SESSION['id_admin'] = $donnees['id_admin'];
-        header('Location: index.php');
+        header('Location: ../Vue/home-page.php');
     }
     else {
         echo 'Mauvais identifiant ou mot de passe !';
