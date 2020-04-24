@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,18 +11,18 @@
     <title>Le Blog De Jean Forteroche</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
           rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
-    <link href="../css/clean-blog.css" rel="stylesheet">
-    <link rel="icon" href="../img/favicon.ico"/>
+    <link href="css/clean-blog.css" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico"/>
 
 </head>
 
@@ -41,19 +40,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="home-page.php">Accueil</a>
+                    <a class="nav-link" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">À propos</a>
+                    <a class="nav-link" href="index.php?aPropos">À propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="list-chapter.php">Liste des Chapitres</a>
+                    <a class="nav-link" href="index.php?listChapters">Liste des Chapitres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="index.php?contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="connection.php">Connexion</a>
+                    <a class="nav-link" href="index.php?connection">Connexion</a>
                 </li>
             </ul>
         </div>
@@ -61,7 +60,6 @@
 </nav>
 
 <?= $content ?>
-
 
 <!-- Footer -->
 <footer>
@@ -95,11 +93,8 @@
                     </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
-                <p><?php if (isset($_SESSION['id']) AND isset($_SESSION['name'])) {
-                        echo 'Bonjour ' . $_SESSION['name'];
-                    } ?></p>
                 <div>
-                    <a type="submit" class="btn btn-primary" href="../Modèle/disconnect.php"> Deconnexion</a>
+                    <a type="submit" class="btn btn-primary" href="Model/disconnect.php">Deconnexion</a>
                 </div>
             </div>
         </div>
@@ -107,11 +102,11 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom scripts for this template -->
-<script src="../js/clean-blog.min.js"></script>
+<script src="js/clean-blog.min.js"></script>
 
 </body>
 

@@ -80,6 +80,14 @@ blockquote {
   border-bottom-left-radius: 5px;
 }
 
+#author-comment {
+  font-weight: bold;
+}
+
+#author-comment-span {
+  display: inline;
+}
+
 ::-moz-selection {
   color: #ffffff;
   background: #0085A1;

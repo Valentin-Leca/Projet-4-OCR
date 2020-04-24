@@ -1,11 +1,10 @@
 <?php ob_start(); ?>
-
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('../img/biblio.jpg')">
+<header class="masthead" style="background-image: url('img/biblio.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div id="logo"><img src="../img/logo_valou_white.png"/></div>
+            <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
                     <h1>À propos</h1>
@@ -34,7 +33,5 @@
 </div>
 
 <hr>
-
 <?php $content = ob_get_clean(); ?>
-
 <?php require('template.php'); ?>
