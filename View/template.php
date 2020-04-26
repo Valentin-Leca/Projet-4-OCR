@@ -51,9 +51,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?contact">Contact</a>
                 </li>
+                <?php if (isset($_SESSION['login'])) { ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?disconnect">Déconnexion</a>
+                </li>
+                <?php } else { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?connection">Connexion</a>
                 </li>
+                <?php } ?>
             </ul>
         </div>
     </div>
@@ -93,9 +99,6 @@
                     </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
-                <div>
-                    <a type="submit" class="btn btn-primary" href="Model/disconnect.php">Deconnexion</a>
-                </div>
             </div>
         </div>
     </div>

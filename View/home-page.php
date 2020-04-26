@@ -7,9 +7,11 @@
             <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Jean Forteroche</h1>
-                    <span class="subheading">Bienvenue sur mon blog, cliquez <a href="index.php?aPropos"><span
-                                    id="underline">ici</span></a> pour en savoir plus à mon sujet.</span>
+                    <h1 id="author-name">Jean Forteroche</h1>
+                    <span class="subheading">Bienvenue sur mon blog, cliquez <a href="index.php?aPropos">
+                            <span id="underline">ici</span></a> pour en savoir plus à mon sujet.</span>
+                        <h3 id="user-name"><?php if (isset($_SESSION['login'])) {
+                            echo "Bienvenue " . $_SESSION['login']; } ?></h3>
                 </div>
             </div>
         </div>
@@ -46,5 +48,6 @@ $data->closeCursor() ?>
 <div class="clearfix">
     <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
 </div>
+<hr>
 <?php $content = ob_get_clean(); ?>
 <?php require_once('template.php'); ?>

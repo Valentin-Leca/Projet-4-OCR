@@ -9,18 +9,15 @@ require_once('Model/UserModel.php');
 class UserController
 {
 
-    public function getConnectionPage()
-    {
+    public function getConnectionPage() {
         require_once('View/connection.php');
     }
 
-    public function getPageCreateAccount()
-    {
+    public function getPageCreateAccount() {
         require_once('View/create-account.php');
     }
 
-    public function createUserAccount()
-    {
+    public function createUserAccount() {
         $password = $_POST['password'];
         $passwordBis = $_POST['passwordBis'];
         $loginForm = $_POST['login'];
@@ -42,5 +39,55 @@ class UserController
         }
     }
 
+    public function connectUserAccount() {
+        $dataUserAccount = new UserModel();
+        $data = $dataUserAccount->connectAccount($_GET['login']);
 
+        $goodPassword = password_verify($_POST['password'], $data['password']);
+
+        if (!$data)
+        {
+            echo 'Mauvais identifiant ou mot de passe !';
+        }
+        else
+        {
+            if ($goodPassword) {
+                session_start();
+                $_SESSION['login'] = $data['login'];
+                $_SESSION['id_admin'] = $data['id_admin'];
+                header('Location: index.php');
+            }
+            else {
+                echo 'Mauvais identifiant ou mot de passe !';
+            }
+        }
+
+    }
+
+    public function disconnectUserAccount() {
+
+        $_SESSION = array();
+        session_destroy();
+
+        header('Location: index.php');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

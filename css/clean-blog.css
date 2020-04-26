@@ -39,12 +39,7 @@ p a {
   transition: 0.2s;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -84,8 +79,18 @@ blockquote {
   font-weight: bold;
 }
 
+#author-name {
+  margin-top: 35px;
+}
+
 #author-comment-span {
   display: inline;
+}
+
+#user-name {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
 
 ::-moz-selection {
