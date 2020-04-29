@@ -64,6 +64,11 @@ blockquote {
   margin-top: 60px;
 }
 
+#see-more {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .caption {
   font-size: 14px;
   font-style: italic;
@@ -85,6 +90,10 @@ blockquote {
 
 #author-comment-span {
   display: inline;
+}
+
+#masthead-admin {
+  height: 700px;
 }
 
 #user-name {

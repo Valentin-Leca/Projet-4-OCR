@@ -19,6 +19,8 @@
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
           rel='stylesheet' type='text/css'>
+    <script src="https://cdn.tiny.cloud/1/w9obw7cf3t030mgngxm3ksirwz0z8ycr6foywyo73vwfq1x4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({selector: '#mytextarea', height: 450,});</script>
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.css" rel="stylesheet">
@@ -51,7 +53,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?contact">Contact</a>
                 </li>
-                <?php if (isset($_SESSION['login'])) { ?>
+                <?php if (isset($_SESSION['login']) && ($_SESSION['id_admin'] == 1))  { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?adminPanel">Administration</a>
+                    </li>
+                <?php } if (isset($_SESSION['login'])) { ?>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?disconnect">Déconnexion</a>
                 </li>

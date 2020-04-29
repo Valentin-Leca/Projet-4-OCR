@@ -10,7 +10,7 @@
                     <h1 id="author-name">Jean Forteroche</h1>
                     <span class="subheading">Bienvenue sur mon blog, cliquez <a href="index.php?aPropos">
                             <span id="underline">ici</span></a> pour en savoir plus à mon sujet.</span>
-                        <h3 id="user-name"><?php if (isset($_SESSION['login'])) {
+                    <h3 id="user-name"><?php if (isset($_SESSION['login'])) {
                             echo "Bienvenue " . $_SESSION['login']; } ?></h3>
                 </div>
             </div>
@@ -29,10 +29,10 @@ while ($dataChaptersModel = $data->fetch()) { ?>
                         <h2 class="post-title">
                             <?php echo $dataChaptersModel['title']; ?>
                         </h2>
-                        <h3 class="post-subtitle">
-                            <?php echo $dataChaptersModel['content_extrait']; ?>... <span
-                                    id="underline_2">voir la suite</span>
-                        </h3>
+                        <p class="post-subtitle">
+                            <?php $contentExtrait = $dataChaptersModel['content'];
+                            echo substr($contentExtrait, 0, 90); ?><br/><span id="see-more">Voir la suite ...</span>
+                        </p>
                     </a>
                     <p class="post-meta">Posté par
                         <a href="index.php?aPropos"><?php echo $dataChaptersModel['author']; ?></a>
@@ -46,7 +46,7 @@ while ($dataChaptersModel = $data->fetch()) { ?>
 $data->closeCursor() ?>
 <!-- Pager -->
 <div class="clearfix">
-    <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+    <a class="btn btn-primary float-right" href="index.php?listChapters">Older Posts &rarr;</a>
 </div>
 <hr>
 <?php $content = ob_get_clean(); ?>

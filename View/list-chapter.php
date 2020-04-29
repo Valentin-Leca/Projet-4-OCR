@@ -26,10 +26,10 @@
                                 <h2 class="post-title">
                                     <?php echo $dataChaptersModel['title']; ?>
                                 </h2>
-                                <h3 class="post-subtitle">
-                                    <?php echo $dataChaptersModel['content_extrait']; ?>... <span
-                                            id="underline_2">voir la suite</span>
-                                </h3>
+                                <p class="post-subtitle">
+                                    <?php $contentExtrait = $dataChaptersModel['content'];
+                                    echo substr($contentExtrait, 0, 90); ?><br /><span id="see-more">Voir la suite ...</span>
+                                </p>
                             </a>
                             <p class="post-meta">Posté par
                                 <a href="index.php?aPropos"><?php echo $dataChaptersModel['author']; ?></a>

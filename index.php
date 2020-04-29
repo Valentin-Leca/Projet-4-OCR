@@ -37,7 +37,12 @@ if (isset($_GET['oneChapter'])) {
     $userController->connectUserAccount();
 } if (isset($_GET['disconnect'])) {
     $userController->disconnectUserAccount();
+} if (isset($_GET['adminPanel'])) {
+    $userController->getAdminPanelPage();
+} if (isset($_GET["getCreationChaptersPage"])) {
+    $chaptersController->getCreateChaptersPage();
+} if (isset($_GET['createChapters'])) {
+    $chaptersController->createChapters();
 } else {
     $chaptersController->getChaptersHomePage();
 }
-

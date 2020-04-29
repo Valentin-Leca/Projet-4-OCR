@@ -71,6 +71,10 @@ class UserController
 
         header('Location: index.php');
     }
+
+    public function getAdminPanelPage() {
+        require_once('View/admin-panel.php');
+    }
 }
 
 

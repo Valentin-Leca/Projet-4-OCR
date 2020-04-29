@@ -10,15 +10,13 @@ require_once('Model/CommentModel.php');
 
 class ChaptersController
 {
-    public function getChaptersHomePage()
-    {
+    public function getChaptersHomePage() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->getChaptersHomePage();
         require_once('View/home-page.php');
     }
 
-    public function getOneChapterPage()
-    {
+    public function getOneChapterPage() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->getOneChapterPage($_GET['id']);
         $dataCommentModel = new CommentModel();
@@ -26,10 +24,19 @@ class ChaptersController
         require_once('View/one-chapter.php');
     }
 
-    public function getListChapters()
-    {
+    public function getListChapters() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->getListChapters();
         require_once('View/list-chapter.php');
+    }
+
+    public function getCreateChaptersPage() {
+        require_once('View/create-chapters.php');
+    }
+
+    public function createChapters() {
+        $dataChaptersModel = new ChaptersModel();
+        $data = $dataChaptersModel->createChapters($_POST['title'], $_POST['content']);
+        header('Location: index.php');
     }
 }
