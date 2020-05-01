@@ -39,4 +39,16 @@ class ChaptersController
         $data = $dataChaptersModel->createChapters($_POST['title'], $_POST['content']);
         header('Location: index.php');
     }
+
+    public function getDeleteChaptersPage() {
+        $dataChaptersModel = new ChaptersModel();
+        $data = $dataChaptersModel->getListChapters();
+        require_once('View/delete-chapters.php');
+    }
+
+    public function deleteChapters() {
+        $dataChaptersModel = new ChaptersModel();
+        $data = $dataChaptersModel->deleteChapters($_GET['id']);
+        header('Location: index.php?listChapters');
+    }
 }

@@ -43,6 +43,10 @@ if (isset($_GET['oneChapter'])) {
     $chaptersController->getCreateChaptersPage();
 } if (isset($_GET['createChapters'])) {
     $chaptersController->createChapters();
+} if (isset($_GET['getDeleteChaptersPage'])) {
+    $chaptersController->getDeleteChaptersPage();
+} if (isset($_GET['deleteChapters'])) {
+    $chaptersController->deleteChapters();
 } else {
     $chaptersController->getChaptersHomePage();
 }

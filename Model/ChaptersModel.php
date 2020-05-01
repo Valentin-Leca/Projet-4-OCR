@@ -34,4 +34,10 @@ class ChaptersModel extends ConnectBdd {
         $req = $bdd->prepare('INSERT INTO news(title, content) VALUES(?, ?)');
         $req->execute(array($title, $content));
     }
+
+    public function deleteChapters($id) {
+        $bdd = $this->connect();
+        $req = $bdd->prepare('DELETE FROM news WHERE id = ?');
+        $req->execute(array($id));
+    }
 }

@@ -21,6 +21,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-preview">
                 <h2 class="post-title"><a href="index.php?getCreationChaptersPage">Créer un Chapitre</a></h2>
+                <h2 class="post-title"><a href="index.php?getDeleteChaptersPage">Supprimer un Chapitre</a></h2>
                 <h2 class="post-title"><a href="">Modifier un Chapitre</a></h2> <!-- suppresion dans cette page  -->
                 <h2 class="post-title"><a href="">Modérer les commentaires</a></h2>
             </div>
