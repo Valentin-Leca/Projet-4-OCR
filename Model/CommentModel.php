@@ -12,4 +12,10 @@ class CommentModel extends connectBDD {
         $req->execute(array($newsId));
         return $req;
     }
+
+    public function postComment($contentComment, $authorComment, $idNews) {
+        $bdd = $this->connect();
+        $req = $bdd->prepare('INSERT INTO comment(content_comment, author_comment, id_news) VALUES(?, ?, ?)');
+        $req->execute(array($contentComment, $authorComment, $idNews));
+    }
 }

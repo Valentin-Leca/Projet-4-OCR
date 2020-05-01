@@ -6,18 +6,15 @@ use P4\Controller\OtherControllers;
 use p4\Controller\UserController;
 use p4\Controller\CommentController;
 
-
 require_once('Controller\ChaptersController.php');
 require_once('Controller\OtherControllers.php');
 require_once('Controller\UserController.php');
 require_once('Controller\CommentController.php');
 
-
 $chaptersController = new ChaptersController();
 $otherControllers = new OtherControllers();
 $userController = new UserController();
 $commentController = new CommentController();
-
 
 if (isset($_GET['oneChapter'])) {
     $chaptersController->getOneChapterPage();
@@ -33,6 +30,8 @@ if (isset($_GET['oneChapter'])) {
     $userController->getPageCreateAccount();
 } if (isset($_GET['createAccount'])) {
     $userController->createUserAccount();
+} if (isset($_GET['postComment'])) {
+    $commentController->postComment();
 } if (isset($_GET['login'])) {
     $userController->connectUserAccount();
 } if (isset($_GET['disconnect'])) {
