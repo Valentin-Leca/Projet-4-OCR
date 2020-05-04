@@ -457,13 +457,18 @@ footer .copyright {
   border-color: #00657b !important;
 }
 
-.delete, .delete-confirm {
+.delete, .delete-confirm, .report {
   background-color: #ff0000;
   border-color: #ff0000;
   margin-bottom: 10px;
 }
 
-.delete:hover, .delete:focus, .delete:active, .delete-confirm:hover, .delete-confirm:focus, .delete-confirm:active {
+.report {
+
+}
+
+.delete:hover, .delete:focus, .delete:active, .delete-confirm:hover, .delete-confirm:focus,
+.delete-confirm:active, .report:hover, .report:focus, .report:active {
   color: #fff;
   background-color: #cf0300 !important;
   border-color: #cf0300 !important;

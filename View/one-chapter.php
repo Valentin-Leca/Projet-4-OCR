@@ -22,36 +22,41 @@
     <div class="col-lg-8 col-md-10 mx-auto">
     <p><?php echo $dataChapterModel['content']; ?></p>
     <p class="post-meta"><span class="caption text-muted">Posté par : <a
-                href="index.php?aPropos"><?php echo $dataChapterModel['author']; ?></a>
-                    le <?php echo $dataChapterModel['date_creation_fr']; ?></span></p><?php }
+                    href="index.php?aPropos"><?php echo $dataChapterModel['author']; ?></a>
+                    le <?php echo $dataChapterModel['date_creation_fr']; ?></span></p>
+<?php }
 $data->closeCursor(); ?>
     <hr>
     <h3 class="section-heading">Commentaires</h3>
-    <?php if (!isset($_SESSION['login'])) { ?>
-    <p class="subheading">Vous devez être connecté pour laisser un commentaire &rarr; <a href="index.php?connection"><span
+<?php if (!isset($_SESSION['login'])) { ?>
+    <p class="subheading">Vous devez être connecté pour laisser un commentaire &rarr; <a
+                href="index.php?connection"><span
                     id="underline_3">Connexion</span></a></p>
-    <?php } ?>
-    <?php if (isset($_SESSION['login'])) { ?>
+<?php } ?>
+<?php if (isset($_SESSION['login'])) { ?>
     <form method="post" action="index.php?postComment&id=<?php echo $_GET['id']?>">
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-                <label>Login</label>
+                <label>Commentaire</label>
                 <textarea type="text" class="form-control" placeholder="Ecrivez votre avis ici" required
-                          data-validation-required-message="Veuillez indiquer votre identifiant." name="contentComment"></textarea>
+                          data-validation-required-message="Veuillez indiquer votre identifiant."
+                          name="contentComment"></textarea>
                 <p class="help-block text-danger"></p>
             </div>
         </div>
         <br>
-        <div id="success"></div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Poster un commentaire</button>
+            <button type="submit" class="btn btn-primary post-comment-btn" id="sendMessageButton">Poster un commentaire
+            </button>
         </div>
     </form>
-    <?php } ?>
+<?php } ?>
 <?php while ($dataCommentModel = $comment->fetch()) { ?><p><span
-            id="author-comment"><?php echo $dataCommentModel['author_comment']; ?></span>
+        id="author-comment"><?php echo $dataCommentModel['author_comment']; ?></span>
     <span class="caption text-muted"
-          id="author-comment-span">le <?php echo $dataCommentModel['date_comment_fr']; ?></span></p>
+          id="author-comment-span">le <?php echo $dataCommentModel['date_comment_fr']; ?></span><?php if (isset($_SESSION['login'])) { ?>
+        <a class="btn btn-primary report" href="index.php?reportComment&id=<?php echo $dataCommentModel['id'] ?>">Signaler</a>
+    <?php } ?></p>
     <p><?php echo $dataCommentModel['content_comment']; ?></p>
     <hr>
 <?php }
