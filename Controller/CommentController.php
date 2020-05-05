@@ -21,4 +21,16 @@ class CommentController {
         $data = $reportComment->reportComment($id);
         header('Location: index.php');
     }
+
+    public function getCommentOnDeletePage() {
+        $getCommentOnDeletePage = new CommentModel();
+        $data = $getCommentOnDeletePage->getCommentOnDeletePage();
+        require_once('View/delete-comment.php');
+    }
+
+    public function deleteComment() {
+        $deleteComment = new CommentModel();
+        $data = $deleteComment->deleteComment($_GET['id']);
+        header('Location: index.php?adminPanel');
+    }
 }

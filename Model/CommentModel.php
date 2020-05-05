@@ -24,4 +24,17 @@ class CommentModel extends connectBDD {
         $req = $bdd->prepare('UPDATE comment SET report = report +1 WHERE id = ?');
         $req->execute(array($id));
     }
+
+    public function getCommentOnDeletePage() {
+        $bdd = $this->connect();
+        $req = $bdd->prepare('SELECT id, content_comment, author_comment, DATE_FORMAT(comment.date_comment, \'%d/%m/%Y à %Hh%imin\') AS date_comment_fr, report FROM comment ORDER BY report DESC');
+        $req->execute(array());
+        return $req;
+    }
+
+    public function deleteComment($id) {
+        $bdd = $this->connect();
+        $req = $bdd->prepare('DELETE FROM comment WHERE id = ?');
+        $req->execute(array($id));
+    }
 }

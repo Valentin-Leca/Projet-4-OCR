@@ -22,7 +22,7 @@
             <form method="post" action="index.php?createChapters">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Title</label>
+                        <label>Titre</label>
                         <input type="text" class="form-control" placeholder="Titre Du chapitre" required
                                data-validation-required-message="Veuillez ajouter un titre au chapitre" name="title">
                         <p class="help-block text-danger"></p>

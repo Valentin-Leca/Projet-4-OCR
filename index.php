@@ -48,6 +48,10 @@ if (isset($_GET['oneChapter'])) {
     $chaptersController->deleteChapters();
 } if (isset($_GET['reportComment'])) {
     $commentController->reportComment();
+} if (isset($_GET['getCommentOnDeletePage'])) {
+    $commentController->getCommentOnDeletePage();
+} if (isset($_GET['deleteComment'])) {
+    $commentController->deleteComment();
 } else {
     $chaptersController->getChaptersHomePage();
 }
