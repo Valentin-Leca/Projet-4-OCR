@@ -38,7 +38,7 @@
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label>Password</label>
-                        <input type="text" class="form-control" placeholder="Mot de passe" id="first_name" required
+                        <input type="password" class="form-control" placeholder="Mot de passe" id="first_name" required
                                data-validation-required-message="Veuillez indiquer votre mot de passe." name="password">
                         <p class="help-block text-danger"></p>
                     </div>

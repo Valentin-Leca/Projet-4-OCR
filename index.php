@@ -23,6 +23,8 @@ $otherControllers = new OtherControllers();
 $userController = new UserController();
 $commentController = new CommentController();
 
+
+
 if (isset($_GET['oneChapter'])) {
     $chaptersController->getOneChapterPage();
 } if (isset($_GET['aPropos'])) {
@@ -39,30 +41,38 @@ if (isset($_GET['oneChapter'])) {
     $userController->createUserAccount();
 } if (isset($_GET['postComment'])) {
     $commentController->postComment();
+} if (isset($_GET['reportComment'])) {
+    $commentController->reportComment();
 } if (isset($_GET['login'])) {
     $userController->connectUserAccount();
 } if (isset($_GET['disconnect'])) {
     $userController->disconnectUserAccount();
-} if (isset($_GET['adminPanel'])) {
-    $userController->getAdminPanelPage();
-} if (isset($_GET["getCreationChaptersPage"])) {
-    $chaptersController->getCreateChaptersPage();
-} if (isset($_GET['createChapters'])) {
-    $chaptersController->createChapters();
-} if (isset($_GET['getEditChaptersPage'])) {
-    $chaptersController->getDeleteChaptersPage();
-} if (isset($_GET['deleteChapters'])) {
-    $chaptersController->deleteChapters();
-} if (isset($_GET['reportComment'])) {
-    $commentController->reportComment();
-} if (isset($_GET['getCommentOnDeletePage'])) {
-    $commentController->getCommentOnDeletePage();
-} if (isset($_GET['deleteComment'])) {
-    $commentController->deleteComment();
-} if (isset($_GET['getUpdateChaptersPage'])) {
-    $chaptersController->getUpdateChaptersPage();
-} if (isset($_GET['updateChapter'])) {
-    $chaptersController->updateChapter();
+} elseif (isset($_SESSION['id_admin'])) {
+    if ($_SESSION['id_admin'] == 1) {
+        if (isset($_GET['adminPanel'])) {
+            $userController->getAdminPanelPage();
+        } if (isset($_GET["getCreationChaptersPage"])) {
+            $chaptersController->getCreateChaptersPage();
+        } if (isset($_GET['createChapters'])) {
+            $chaptersController->createChapters();
+        } if (isset($_GET['getEditChaptersPage'])) {
+            $chaptersController->getDeleteChaptersPage();
+        } if (isset($_GET['deleteChapters'])) {
+            $chaptersController->deleteChapters();
+        } if (isset($_GET['getCommentOnDeletePage'])) {
+            $commentController->getCommentOnDeletePage();
+        } if (isset($_GET['deleteComment'])) {
+            $commentController->deleteComment();
+        } if (isset($_GET['getUpdateChaptersPage'])) {
+            $chaptersController->getUpdateChaptersPage();
+        } if (isset($_GET['updateChapter'])) {
+            $chaptersController->updateChapter();
+        } else {
+            $chaptersController->getChaptersHomePage();
+        }
+    } else {
+        $chaptersController->getChaptersHomePage();
+    }
 } else {
     $chaptersController->getChaptersHomePage();
 }
