@@ -27,7 +27,7 @@ class CommentModel extends connectBDD {
 
     public function getCommentOnDeletePage() {
         $bdd = $this->connect();
-        $req = $bdd->prepare('SELECT id, content_comment, author_comment, DATE_FORMAT(comment.date_comment, \'%d/%m/%Y à %Hh%imin\') AS date_comment_fr, report FROM comment ORDER BY report DESC');
+        $req = $bdd->prepare('SELECT id, content_comment, author_comment, DATE_FORMAT(comment.date_comment, \'%d/%m/%Y à %Hh%imin\') AS date_comment_fr, report FROM comment WHERE report > 0 ORDER BY report DESC');
         $req->execute(array());
         return $req;
     }

@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+$time = time();
+if (isset($_SESSION['timeOut']) && $time > $_SESSION['timeOut']) {
+    session_destroy();
+    session_start();
+}
+$_SESSION['timeOut'] = $time + 28800;
+
 use P4\Controller\ChaptersController;
 use P4\Controller\OtherControllers;
 use p4\Controller\UserController;
@@ -42,7 +49,7 @@ if (isset($_GET['oneChapter'])) {
     $chaptersController->getCreateChaptersPage();
 } if (isset($_GET['createChapters'])) {
     $chaptersController->createChapters();
-} if (isset($_GET['getDeleteChaptersPage'])) {
+} if (isset($_GET['getEditChaptersPage'])) {
     $chaptersController->getDeleteChaptersPage();
 } if (isset($_GET['deleteChapters'])) {
     $chaptersController->deleteChapters();
@@ -52,6 +59,10 @@ if (isset($_GET['oneChapter'])) {
     $commentController->getCommentOnDeletePage();
 } if (isset($_GET['deleteComment'])) {
     $commentController->deleteComment();
+} if (isset($_GET['getUpdateChaptersPage'])) {
+    $chaptersController->getUpdateChaptersPage();
+} if (isset($_GET['updateChapter'])) {
+    $chaptersController->updateChapter();
 } else {
     $chaptersController->getChaptersHomePage();
 }

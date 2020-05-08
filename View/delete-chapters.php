@@ -34,6 +34,7 @@ while ($dataChaptersModel = $data->fetch()) { ?>
                     <div class="clearfix">
                         <button class="btn btn-primary delete float-left">&rarr; Supprimer le Chapitre</button>
                         <a class="btn btn-primary delete-confirm float-left" href="index.php?deleteChapters&id=<?php echo $dataChaptersModel['id']; ?>">&rarr; Confirmer la Suppression ?</a>
+                        <a class="btn btn-primary  float-left" href="index.php?getUpdateChaptersPage&id=<?php echo $dataChaptersModel['id']; ?>">&rarr; Modifier Un Chapitre</a>
                     </div>
                 </div>
                 <hr>

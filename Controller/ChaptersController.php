@@ -51,4 +51,16 @@ class ChaptersController
         $data = $dataChaptersModel->deleteChapters($_GET['id']);
         header('Location: index.php?listChapters');
     }
+
+    public function getUpdateChaptersPage() {
+        $dataChaptersModel = new ChaptersModel();
+        $data = $dataChaptersModel->getUpdateChaptersPage();
+        require_once('View/edit-chapters.php');
+    }
+
+    public function updateChapter() {
+        $dataChaptersModel = new ChaptersModel();
+        $data = $dataChaptersModel->updateChapter($_POST['title'], $_POST['content'], $_GET['id']);
+        header('Location: index.php?adminPanel');
+    }
 }

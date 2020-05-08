@@ -40,4 +40,17 @@ class ChaptersModel extends ConnectBdd {
         $req = $bdd->prepare('DELETE FROM news WHERE id = ?');
         $req->execute(array($id));
     }
+
+    public function getUpdateChaptersPage() {
+        $bdd = $this->connect();
+        $req = $bdd->prepare('SELECT id, title, content FROM news WHERE id = ?');
+        $req->execute(array($_GET['id']));
+        return $req;
+    }
+
+    public function updateChapter($title, $content, $id) {
+        $bdd = $this->connect();
+        $req = $bdd->prepare('UPDATE news SET title = ?, content = ? WHERE id = ?');
+        $req->execute(array($title, $content, $id));
+    }
 }
