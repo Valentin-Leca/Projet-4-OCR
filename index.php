@@ -1,12 +1,15 @@
 <?php
 session_start();
 
+// Automatic disconnect after 8 hours.
 $time = time();
 if (isset($_SESSION['timeOut']) && $time > $_SESSION['timeOut']) {
     session_destroy();
+    unset($_SESSION['token']);
     session_start();
 }
 $_SESSION['timeOut'] = $time + 28800;
+
 
 use P4\Controller\ChaptersController;
 use P4\Controller\OtherControllers;

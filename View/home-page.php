@@ -11,7 +11,7 @@
                     <span class="subheading">Bienvenue sur mon blog, cliquez <a href="index.php?aPropos">
                             <span id="underline">ici</span></a> pour en savoir plus à mon sujet.</span>
                     <h3 id="user-name"><?php if (isset($_SESSION['login'])) {
-                            echo "Bienvenue " . $_SESSION['login']; } ?></h3>
+                            echo "Bienvenue " . htmlspecialchars($_SESSION['login']); } ?></h3>
                 </div>
             </div>
         </div>
@@ -25,9 +25,9 @@ while ($dataChaptersModel = $data->fetch()) { ?>
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
-                    <a href="index.php?oneChapter&id=<?php echo $dataChaptersModel['id']; ?>">
+                    <a href="index.php?oneChapter&id=<?php echo htmlspecialchars($dataChaptersModel['id']); ?>">
                         <h2 class="post-title">
-                            <?php echo $dataChaptersModel['title']; ?>
+                            <?php echo htmlspecialchars($dataChaptersModel['title']); ?>
                         </h2>
                         <p class="post-subtitle">
                             <?php $contentExtrait = $dataChaptersModel['content'];
@@ -35,8 +35,8 @@ while ($dataChaptersModel = $data->fetch()) { ?>
                         </p>
                     </a>
                     <p class="post-meta">Posté par
-                        <a href="index.php?aPropos"><?php echo $dataChaptersModel['author']; ?></a>
-                        le <?php echo $dataChaptersModel['date_creation_fr']; ?></p>
+                        <a href="index.php?aPropos"><?php echo htmlspecialchars($dataChaptersModel['author']); ?></a>
+                        le <?php echo htmlspecialchars($dataChaptersModel['date_creation_fr']); ?></p>
                 </div>
                 <hr>
             </div>

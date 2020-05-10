@@ -8,7 +8,7 @@
                 <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="post-heading">
-                        <h1><?php echo $dataChapterModel['title']; ?></h1>
+                        <h1><?php echo htmlspecialchars($dataChapterModel['title']); ?></h1>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@
     <div class="col-lg-8 col-md-10 mx-auto">
     <p><?php echo $dataChapterModel['content']; ?></p>
     <p class="post-meta"><span class="caption text-muted">Posté par : <a
-                    href="index.php?aPropos"><?php echo $dataChapterModel['author']; ?></a>
-                    le <?php echo $dataChapterModel['date_creation_fr']; ?></span></p>
+                    href="index.php?aPropos"><?php echo htmlspecialchars($dataChapterModel['author']); ?></a>
+                    le <?php echo htmlspecialchars($dataChapterModel['date_creation_fr']); ?></span></p>
 <?php }
 $data->closeCursor(); ?>
     <hr>
@@ -34,7 +34,7 @@ $data->closeCursor(); ?>
                     id="underline_3">Connexion</span></a></p>
 <?php } ?>
 <?php if (isset($_SESSION['login'])) { ?>
-    <form method="post" action="index.php?postComment&id=<?php echo $_GET['id']?>">
+    <form method="post" action="index.php?postComment&id=<?php echo htmlspecialchars($_GET['id']); ?>">
         <div class="control-group">
             <div class="form-group floating-label-form-group controls">
                 <label>Commentaire</label>
@@ -52,12 +52,12 @@ $data->closeCursor(); ?>
     </form>
 <?php } ?>
 <?php while ($dataCommentModel = $comment->fetch()) { ?><p><span
-        id="author-comment"><?php echo $dataCommentModel['author_comment']; ?></span>
+        id="author-comment"><?php echo htmlspecialchars($dataCommentModel['author_comment']); ?></span>
     <span class="caption text-muted"
-          id="author-comment-span">le <?php echo $dataCommentModel['date_comment_fr']; ?></span><?php if (isset($_SESSION['login'])) { ?>
-        <a class="btn btn-primary report" href="index.php?reportComment&id=<?php echo $dataCommentModel['id'] ?>">Signaler</a>
+          id="author-comment-span">le <?php echo htmlspecialchars($dataCommentModel['date_comment_fr']); ?></span><?php if (isset($_SESSION['login'])) { ?>
+        <a class="btn btn-primary report" href="index.php?reportComment&id=<?php echo htmlspecialchars($dataCommentModel['id']);  ?>">Signaler</a>
     <?php } ?></p>
-    <p><?php echo $dataCommentModel['content_comment']; ?></p>
+    <p><?php echo htmlspecialchars($dataCommentModel['content_comment']); ?></p>
     <hr>
 <?php }
 $comment->closeCursor(); ?>

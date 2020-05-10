@@ -24,7 +24,7 @@ class CommentController {
 
     public function getCommentOnDeletePage() {
         $getCommentOnDeletePage = new CommentModel();
-        $data = $getCommentOnDeletePage->getCommentOnDeletePage();
+        $reportedComments = $getCommentOnDeletePage->getCommentOnDeletePage();
         require_once('View/delete-comment.php');
     }
 

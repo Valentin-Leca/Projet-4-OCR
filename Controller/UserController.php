@@ -68,6 +68,7 @@ class UserController
 
         $_SESSION = array();
         session_destroy();
+        unset($_SESSION['token']);
 
         header('Location: index.php');
     }

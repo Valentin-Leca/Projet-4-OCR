@@ -16,18 +16,20 @@
 </header>
 
 <!-- Main Content -->
-<?php
-while ($comment = $data->fetch()) { ?>
+<?php if (empty($reportedComments)) { ?>
+<p>Vous n'avez pas de commentaires signalés pour le moment !</p>
+<?php } else { ?>
+<?php foreach($reportedComments as $comment) { ?>
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
                     <a href="">
                         <h2 class="post-title">
-                            <?php echo $comment['author_comment']; ?>
+                            <?php echo htmlspecialchars($comment['author_comment']); ?>
                         </h2>
                         <p class="post-subtitle">
-                            <?php echo $comment['content_comment']; ?>
+                            <?php echo htmlspecialchars($comment['content_comment']); ?>
                         </p>
                     </a>
                     <div class="clearfix">
@@ -39,8 +41,7 @@ while ($comment = $data->fetch()) { ?>
             </div>
         </div>
     </div>
-<?php }
-$data->closeCursor() ?>
+<?php }} ?>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

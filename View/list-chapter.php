@@ -4,7 +4,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div id="logo"><img src="img/logo_valou_white.png"/></div>
+                <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="post-heading">
                         <h1>Liste des chapitres</h1>
@@ -22,9 +22,9 @@
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <div class="post-preview">
-                            <a href="index.php?oneChapter&id=<?php echo $dataChaptersModel['id']; ?>">
+                            <a href="index.php?oneChapter&id=<?php echo htmlspecialchars($dataChaptersModel['id']); ?>">
                                 <h2 class="post-title">
-                                    <?php echo $dataChaptersModel['title']; ?>
+                                    <?php echo htmlspecialchars($dataChaptersModel['title']); ?>
                                 </h2>
                                 <p class="post-subtitle">
                                     <?php $contentExtrait = $dataChaptersModel['content'];
@@ -32,8 +32,8 @@
                                 </p>
                             </a>
                             <p class="post-meta">Posté par
-                                <a href="index.php?aPropos"><?php echo $dataChaptersModel['author']; ?></a>
-                                le <?php echo $dataChaptersModel['date_creation_fr']; ?></p>
+                                <a href="index.php?aPropos"><?php echo htmlspecialchars($dataChaptersModel['author']); ?></a>
+                                le <?php echo htmlspecialchars($dataChaptersModel['date_creation_fr']); ?></p>
                         </div>
                         <hr>
                     </div>
