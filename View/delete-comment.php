@@ -16,8 +16,16 @@
 </header>
 
 <!-- Main Content -->
+<?php if (isset($_SESSION['commentIsDelete'])) { ?>
+    <div class="container">
+        <div class="alert alert-success col-lg-8 col-md-10 mx-auto">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <?php echo $_SESSION['commentIsDelete'] ?>
+        </div>
+    </div>
+<?php } unset($_SESSION['commentIsDelete']); ?>
 <?php if (empty($reportedComments)) { ?>
-<p>Vous n'avez pas de commentaires signalés pour le moment !</p>
+    <p id="no-comment-report">Vous n'avez pas de commentaires signalés pour le moment !</p>
 <?php } else { ?>
 <?php foreach($reportedComments as $comment) { ?>
     <div class="container">

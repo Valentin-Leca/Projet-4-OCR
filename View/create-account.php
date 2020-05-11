@@ -4,7 +4,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-                <div id="logo"><img src="img/logo_valou_white.png"/></div>
+                <div id="logo"><img src="img/logo_valou_white.png" alt="Logo Alaska"/></div>
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="page-heading">
                         <h1>Création du Compte</h1>
@@ -21,6 +21,18 @@
                 <p>En vous créant un compte, vous pourrez me laisser vos commentaires sur les derniers chapitres et
                     ainsi me dire
                     ce que vous en pensez !</p>
+                <?php if (isset($_SESSION['badLogin'])) { ?>
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <?php echo $_SESSION['badLogin'] ?>
+                        </div>
+                <?php } unset($_SESSION['badLogin']); ?>
+                <?php if (isset($_SESSION['badPassword'])) { ?>
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <?php echo $_SESSION['badPassword'] ?>
+                        </div>
+                <?php } unset($_SESSION['badPassword']); ?>
                 <form method="post" action="index.php?createAccount">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">

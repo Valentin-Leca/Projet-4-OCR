@@ -37,7 +37,8 @@ class ChaptersController
     public function createChapters() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->createChapters($_POST['title'], $_POST['content']);
-        header('Location: index.php');
+        $_SESSION['chapterIsCreate'] = "Votre chapitre a été créé ! Il est maintenant visible par tout le monde.";
+        header('Location: index.php?adminPanel');
     }
 
     public function getDeleteChaptersPage() {
@@ -49,7 +50,8 @@ class ChaptersController
     public function deleteChapters() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->deleteChapters($_GET['id']);
-        header('Location: index.php?listChapters');
+        $_SESSION['chapterIsDelete'] = "Votre chapitre a été supprimé. Il n'est maintenant plus visible.";
+        header('Location: index.php?adminPanel');
     }
 
     public function getUpdateChaptersPage() {
@@ -61,6 +63,7 @@ class ChaptersController
     public function updateChapter() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->updateChapter($_POST['title'], $_POST['content'], $_GET['id']);
+        $_SESSION['chapterIsUpdate'] = "Votre chapitre a bien été modifié.";
         header('Location: index.php?adminPanel');
     }
 }

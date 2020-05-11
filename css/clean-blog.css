@@ -102,6 +102,11 @@ blockquote {
   text-decoration: underline;
 }
 
+#no-comment-report {
+  text-align: center;
+  font-weight: bold;
+}
+
 ::-moz-selection {
   color: #ffffff;
   background: #0085A1;
@@ -160,6 +165,12 @@ img::-moz-selection {
   color: #c90000;
   background-color: #f4abab;
   border-color: #f4abab;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }
 
 @media only screen and (min-width: 992px) {

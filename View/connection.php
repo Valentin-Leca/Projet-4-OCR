@@ -4,7 +4,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div id="logo"><img src="img/logo_valou_white.png"/></div>
+            <div id="logo"><img src="img/logo_valou_white.png" alt="Logo Alaska"/></div>
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
                     <h1>Se connecter</h1>
@@ -20,6 +20,18 @@
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>En vous connectant, vous pourrez me laisser vos commentaires sur les derniers chapitres et ainsi me dire
                 ce que vous en pensez !</p>
+            <?php if (isset($_SESSION['createAccountSucces'])) { ?>
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <?php echo $_SESSION['createAccountSucces']; ?>
+                </div>
+            <?php } unset($_SESSION['createAccountSucces']); ?>
+            <?php if (isset($_SESSION['errorAtConnection'])) { ?>
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        <?php echo $_SESSION['errorAtConnection']; ?>
+                    </div>
+            <?php } unset($_SESSION['errorAtConnection']); ?>
             <form  method="post" action="index.php?login">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">

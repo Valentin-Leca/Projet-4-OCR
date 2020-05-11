@@ -19,6 +19,24 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+            <?php if (isset($_SESSION['chapterIsCreate'])) { ?>
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                <?php echo $_SESSION['chapterIsCreate'] ?>
+            </div>
+            <?php } unset($_SESSION['chapterIsCreate']); ?>
+            <?php if (isset($_SESSION['chapterIsDelete'])) { ?>
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <?php echo $_SESSION['chapterIsDelete'] ?>
+                </div>
+            <?php } unset($_SESSION['chapterIsDelete']); ?>
+            <?php if (isset($_SESSION['chapterIsUpdate'])) { ?>
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    <?php echo $_SESSION['chapterIsUpdate'] ?>
+                </div>
+            <?php } unset($_SESSION['chapterIsUpdate']); ?>
             <div class="post-preview">
                 <h2 class="post-title"><a href="index.php?getCreationChaptersPage">Créer un Chapitre</a></h2>
                 <h2 class="post-title"><a href="index.php?getEditChaptersPage">Modifier un chapitre</a></h2>

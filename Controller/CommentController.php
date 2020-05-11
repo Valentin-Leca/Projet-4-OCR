@@ -31,6 +31,7 @@ class CommentController {
     public function deleteComment() {
         $deleteComment = new CommentModel();
         $data = $deleteComment->deleteComment($_GET['id']);
-        header('Location: index.php?adminPanel');
+        $_SESSION['commentIsDelete'] = "Le commentaire a bien été supprimé.";
+        header('Location: index.php?getCommentOnDeletePage');
     }
 }
