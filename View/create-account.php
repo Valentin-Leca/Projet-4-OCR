@@ -36,7 +36,8 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Nom" id="name" required
+                            <input type="text" class="form-control" minlength="2" maxlength="25" pattern="[a-zA-ZÀ-ÿ-]+"
+                                   placeholder="Nom" id="name" required
                                    data-validation-required-message="Veuillez indiquer votre nom." name="name">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -44,7 +45,8 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="Prénom" id="first_name" required
+                            <input type="text" class="form-control" minlength="2" maxlength="25" pattern="[a-zA-ZÀ-ÿ-]+"
+                                   placeholder="Prénom" id="first_name" required
                                    data-validation-required-message="Veuillez indiquer votre prénom." name="firstName">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -52,8 +54,9 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Adresse Mail" id="email" required
-                                   data-validation-required-message="Veuillez indiquer une adresse mail valide."
+                            <input type="email" class="form-control" minlength="2" maxlength="70"
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}$" placeholder="Adresse Mail" id="email"
+                                   required data-validation-required-message="Veuillez indiquer une adresse mail valide."
                                    name="mailAdress">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -61,8 +64,8 @@
                     <div class="control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Login (connection ID)</label>
-                            <input type="text" class="form-control" placeholder="Pseudo (identifiant de connexion)"
-                                   id="login" required
+                            <input type="text" class="form-control" minlength="2" maxlength="25" pattern="[a-zA-ZÀ-ÿ-]+"
+                                   placeholder="Pseudo (identifiant de connexion)" id="login" required
                                    data-validation-required-message="Veuillez indiquer votre pseudo." name="login">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -70,8 +73,8 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe" id="password"
-                                   required
+                            <input type="password" class="form-control" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ-]+"
+                                   placeholder="Mot de passe" id="password" required
                                    data-validation-required-message="Veuillez indiquer votre mot de passe."
                                    name="password">
                             <p class="help-block text-danger"></p>
@@ -80,8 +83,8 @@
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Confirmation du mot de passe"
-                                   id="passwordBis" required
+                            <input type="password" class="form-control" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ-]+"
+                                   placeholder="Confirmation du mot de passe" id="passwordBis" required
                                    data-validation-required-message="Veuillez confirmer votre mot de passe."
                                    name="passwordBis">
                             <p class="help-block text-danger"></p>
