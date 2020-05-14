@@ -17,33 +17,37 @@
 
 <!-- Main Content -->
 <?php while ($chaptersData = $data->fetch()) { ?>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <form method="post" action="index.php?updateChapter&id=<?php echo htmlspecialchars($chaptersData['id']); ?>">
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <label>Titre</label>
-                        <input type="text" class="form-control" placeholder="Titre Du chapitre" required value="<?php echo htmlspecialchars($chaptersData['title']) ; ?>"
-                               data-validation-required-message="Veuillez ajouter un titre au chapitre" name="title">
-                        <p class="help-block text-danger"></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <form method="post"
+                      action="index.php?updateChapter&id=<?php echo htmlspecialchars($chaptersData['id']); ?>">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Titre</label>
+                            <input type="text" class="form-control" placeholder="Titre Du chapitre" required
+                                   value="<?php echo htmlspecialchars($chaptersData['title']); ?>"
+                                   data-validation-required-message="Veuillez ajouter un titre au chapitre"
+                                   name="title">
+                            <p class="help-block text-danger"></p>
+                        </div>
                     </div>
-                </div>
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls">
-                        <label>Contenue du Chapitre</label>
-                        <textarea id="mytextarea" name="content" required><?php echo htmlspecialchars($chaptersData['content']); ?></textarea>
-                        <p class="help-block text-danger"></p>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Contenue du Chapitre</label>
+                            <textarea id="mytextarea" name="content"
+                                      required><?php echo htmlspecialchars($chaptersData['content']); ?></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Poster Le Chapitre</button>
-                </div>
-            </form>
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Poster Le Chapitre</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 <?php } ?>
 
 <?php $content = ob_get_clean(); ?>

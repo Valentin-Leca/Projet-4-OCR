@@ -18,9 +18,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <p>En vous créant un compte, vous pourrez me laisser vos commentaires sur les derniers chapitres et
-                    ainsi me dire
-                    ce que vous en pensez !</p>
+                <p>En vous créant un compte, vous pourrez me laisser vos commentaires sur
+                    les derniers chapitres et ainsi me dire ce que vous en pensez !</p>
                 <?php if (isset($_SESSION['badLogin'])) { ?>
                         <div class="alert alert-error">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>

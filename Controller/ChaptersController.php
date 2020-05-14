@@ -8,8 +8,8 @@ use P4\Model\CommentModel;
 require_once('Model/ChaptersModel.php');
 require_once('Model/CommentModel.php');
 
-class ChaptersController
-{
+class ChaptersController {
+
     public function getChaptersHomePage() {
         $dataChaptersModel = new ChaptersModel();
         $data = $dataChaptersModel->getChaptersHomePage();

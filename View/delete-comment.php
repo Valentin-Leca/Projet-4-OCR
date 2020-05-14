@@ -32,14 +32,12 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
-                    <a href="">
                         <h2 class="post-title">
                             <?php echo htmlspecialchars($comment['author_comment']); ?>
                         </h2>
                         <p class="post-subtitle">
                             <?php echo htmlspecialchars($comment['content_comment']); ?>
                         </p>
-                    </a>
                     <div class="clearfix">
                         <button class="btn btn-primary delete float-left">&rarr; Supprimer le Commentaire</button>
                         <a class="btn btn-primary delete-confirm float-left" href="index.php?deleteComment&id=<?php echo $comment['id']; ?>">&rarr; Confirmer la Suppression ?</a>

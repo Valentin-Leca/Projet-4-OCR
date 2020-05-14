@@ -9,9 +9,10 @@
                 <div class="site-heading">
                     <h1 id="author-name">Jean Forteroche</h1>
                     <span class="subheading">Bienvenue sur mon blog, cliquez <a href="index.php?aPropos">
-                            <span id="underline">ici</span></a> pour en savoir plus à mon sujet.</span>
+                            <span id="underline">ici</span></a> pour en savoir plus à mon sujet.
+                    </span>
                     <h3 id="user-name"><?php if (isset($_SESSION['login'])) {
-                            echo "Bienvenue " . htmlspecialchars($_SESSION['login']); } ?></h3>
+                        echo "Bienvenue " . htmlspecialchars($_SESSION['login']); } ?></h3>
                 </div>
             </div>
         </div>

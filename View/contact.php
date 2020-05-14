@@ -4,7 +4,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div id="logo"><img src="img/logo_valou_white.png"/></div>
+            <div id="logo"><img src="img/logo_valou_white.png" alt="Logo Alaska"/></div>
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
                     <h1>Me Contacter</h1>
@@ -19,11 +19,8 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Vous souhaitez me contacter ? Remplissez le formulaire ci-dessous pour m'envoyer un message et je vous
-                répondrai dans les plus brefs délais!</p>
-            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-            <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+            <p>Vous souhaitez me contacter ? Remplissez le formulaire ci-dessous pour
+                m'envoyer un message et je vous répondrai dans les plus brefs délais!</p>
             <form name="sentMessage" id="contactForm" novalidate>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
