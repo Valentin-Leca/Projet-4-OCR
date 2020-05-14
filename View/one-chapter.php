@@ -7,7 +7,7 @@
             <div class="row">
                 <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="post-heading">
+                    <div class="site-heading">
                         <h1><?php echo htmlspecialchars($dataChapterModel['title']); ?></h1>
                     </div>
                 </div>

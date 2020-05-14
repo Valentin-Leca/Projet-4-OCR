@@ -6,7 +6,7 @@
         <div class="row">
             <div id="logo"><img src="img/logo_valou_white.png" alt="Logo Alaska"/></div>
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
+                <div class="site-heading">
                     <h1>Me Contacter</h1>
                     <span class="subheading">Vous avez une question ? J'ai la réponse.</span>
                 </div>

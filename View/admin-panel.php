@@ -6,7 +6,7 @@
         <div class="row">
             <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
             <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="page-heading">
+                <div class="site-heading">
                     <h1>Page d'Administration</h1>
                     <span class="subheading">Ici, vous pouvez gérer vos articles et les commentaires du site.</span>
                 </div>
@@ -16,7 +16,7 @@
 </header>
 
 <!-- Main Content -->
-<div class="container">
+<div class="container bottom-space">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <?php if (isset($_SESSION['chapterIsCreate'])) { ?>
@@ -37,12 +37,11 @@
                     <?php echo $_SESSION['chapterIsUpdate'] ?>
                 </div>
             <?php } unset($_SESSION['chapterIsUpdate']); ?>
-            <div class="post-preview">
+            <div class="post-preview flex-center">
                 <h2 class="post-title"><a href="index.php?getCreationChaptersPage">Créer un Chapitre</a></h2>
                 <h2 class="post-title"><a href="index.php?getEditChaptersPage">Modifier un chapitre</a></h2>
                 <h2 class="post-title"><a href="index.php?getCommentOnDeletePage">Modérer les commentaires</a></h2>
             </div>
-            <hr>
         </div>
     </div>
 </div>
