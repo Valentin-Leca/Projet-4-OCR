@@ -29,7 +29,7 @@
                                 <p class="post-subtitle">
                                     <?php $contentExtrait = $dataChaptersModel['content'];
                                     echo substr($contentExtrait, 0, 90); ?><br />
-                                    <span id="see-more">Voir la suite ...</span>
+                                    <span class="see-more">Voir la suite ...</span>
                                 </p>
                             </a>
                             <p class="post-meta">Posté par

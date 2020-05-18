@@ -11,8 +11,8 @@
                     <span class="subheading">Bienvenue sur mon blog, cliquez <a href="index.php?aPropos">
                             <span id="underline">ici</span></a> pour en savoir plus à mon sujet.
                     </span>
-                    <h3 id="user-name"><?php if (isset($_SESSION['login'])) {
-                        echo "Bienvenue " . htmlspecialchars($_SESSION['login']); } ?></h3>
+                        <?php if (isset($_SESSION['login'])) { ?>
+                        <h3 id="user-name">Bienvenue <?php echo htmlspecialchars($_SESSION['login']); } ?></h3>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@ while ($dataChaptersModel = $data->fetch()) { ?>
                         </h2>
                         <p class="post-subtitle">
                             <?php $contentExtrait = $dataChaptersModel['content'];
-                            echo substr($contentExtrait, 0, 90); ?><br/><span id="see-more">Voir la suite ...</span>
+                            echo substr($contentExtrait, 0, 90); ?><br/><span class="see-more">Voir la suite ...</span>
                         </p>
                     </a>
                     <p class="post-meta">Posté par

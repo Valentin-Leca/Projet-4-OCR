@@ -7,8 +7,7 @@
                 <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="page-heading">
-                        <h1>Modifier un chapitre</h1>
-                        <!-- <span class="subheading"></span> -->
+                        <h1>Modifier ou supprimer un chapitre</h1>
                     </div>
                 </div>
             </div>
@@ -28,7 +27,7 @@ while ($dataChaptersModel = $data->fetch()) { ?>
                         </h2>
                         <p class="post-subtitle">
                             <?php $contentExtrait = $dataChaptersModel['content'];
-                            echo substr($contentExtrait, 0, 200); ?>... <span id="see-more">Voir la suite</span>
+                            echo substr($contentExtrait, 0, 200); ?>... <span class="see-more">Voir la suite</span>
                         </p>
                     </a>
                     <div class="clearfix">
