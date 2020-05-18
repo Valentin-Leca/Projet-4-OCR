@@ -35,7 +35,7 @@
                 <form method="post" action="index.php?createAccount">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Name</label>
+                            <label for="name">Name</label>
                             <input type="text" class="form-control" minlength="2" maxlength="25" pattern="[a-zA-ZÀ-ÿ-]+"
                                    placeholder="Nom" id="name" required
                                    data-validation-required-message="Veuillez indiquer votre nom." name="name">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>First Name</label>
+                            <label for="first_name">First Name</label>
                             <input type="text" class="form-control" minlength="2" maxlength="25" pattern="[a-zA-ZÀ-ÿ-]+"
                                    placeholder="Prénom" id="first_name" required
                                    data-validation-required-message="Veuillez indiquer votre prénom." name="firstName">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Email Address</label>
+                            <label for="email">Email Address</label>
                             <input type="email" class="form-control" minlength="2" maxlength="70"
                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}$" placeholder="Adresse Mail" id="email"
                                    required data-validation-required-message="Veuillez indiquer une adresse mail valide."
@@ -63,7 +63,7 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Login (connection ID)</label>
+                            <label for="login">Login (connection ID)</label>
                             <input type="text" class="form-control" minlength="2" maxlength="25" pattern="[a-zA-ZÀ-ÿ-]+"
                                    placeholder="Pseudo (identifiant de connexion)" id="login" required
                                    data-validation-required-message="Veuillez indiquer votre pseudo." name="login">
@@ -72,8 +72,8 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Password</label>
-                            <input type="password" class="form-control" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ-]+"
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ0-9-]+"
                                    placeholder="Mot de passe" id="password" required
                                    data-validation-required-message="Veuillez indiquer votre mot de passe."
                                    name="password">
@@ -82,8 +82,8 @@
                     </div>
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Password</label>
-                            <input type="password" class="form-control" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ-]+"
+                            <label for="passwordBis">Password</label>
+                            <input type="password" class="form-control" minlength="2" maxlength="50" pattern="[a-zA-ZÀ-ÿ0-9-]+"
                                    placeholder="Confirmation du mot de passe" id="passwordBis" required
                                    data-validation-required-message="Veuillez confirmer votre mot de passe."
                                    name="passwordBis">

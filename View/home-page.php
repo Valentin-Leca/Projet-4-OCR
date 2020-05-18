@@ -47,7 +47,7 @@ while ($dataChaptersModel = $data->fetch()) { ?>
 $data->closeCursor() ?>
 <!-- Pager -->
 <div class="clearfix">
-    <a class="btn btn-primary float-right" href="index.php?listChapters">Older Posts &rarr;</a>
+    <a class="btn btn-primary float-right" href="index.php?listChapters">Anciens Chapitres &rarr;</a>
 </div>
 <hr>
 <?php $content = ob_get_clean(); ?>

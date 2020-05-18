@@ -7,7 +7,7 @@
                 <div id="logo"><img src="img/logo_valou_white.png" alt="logo Alaska"/></div>
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="page-heading">
-                        <h1>Supprimer un chapitre</h1>
+                        <h1>Modifier un chapitre</h1>
                         <!-- <span class="subheading"></span> -->
                     </div>
                 </div>
@@ -36,7 +36,7 @@ while ($dataChaptersModel = $data->fetch()) { ?>
                         <a class="btn btn-primary delete-confirm float-left"
                            href="index.php?deleteChapters&id=<?php echo htmlspecialchars($dataChaptersModel['id']); ?>">&rarr;
                             Confirmer la Suppression ?</a>
-                        <a class="btn btn-primary  float-left"
+                        <a class="btn btn-primary float-left"
                            href="index.php?getUpdateChaptersPage&id=<?php echo htmlspecialchars($dataChaptersModel['id']); ?>">&rarr;
                             Modifier Un Chapitre</a>
                     </div>
