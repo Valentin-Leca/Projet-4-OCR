@@ -12,7 +12,7 @@
                             <span id="underline">ici</span></a> pour en savoir plus à mon sujet.
                     </span>
                         <?php if (isset($_SESSION['login'])) { ?>
-                        <h3 id="user-name">Bienvenue <?php echo htmlspecialchars($_SESSION['login']); } ?></h3>
+                        <h3 id="user-name">Bienvenue <?php echo htmlspecialchars($_SESSION['login']); } ?>
                 </div>
             </div>
         </div>
