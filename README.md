@@ -1,1 +1,1 @@
-# Projet-4-OCR
+# Projet-4-OCR     PHP / MYSQL / JAVASCRIPT
